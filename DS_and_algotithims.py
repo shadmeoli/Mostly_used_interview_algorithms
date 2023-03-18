@@ -171,6 +171,18 @@ class Algorithims:
                     list[j], list[j+1] = list[j+1], list[j]
 
 
+    """
+        Complete the solution so that it splits the string
+        into pairs of two characters. 
+        If the string contains an odd number of characters
+        then it should replace the missing second character 
+        of the final pair with an underscore ('_').
+    """
+    def splitter(self, s):
+        if len(s) % 2 == 1:
+            s += "_"
+        return [s[i:i+2] for i in range(0, len(s), 2)]
+
 
 #  2D matrix to search
 list = [
@@ -181,7 +193,4 @@ list = [
 # algorithim runner
 if __name__ == '__main__':
     algorithim = Algorithims()
-    print(algorithim.findDuplicate([2,1,3,1,4]))
-    print(algorithim.bubble([5,7,1,4,3,6]))
-    # print(algorithim.locate_val([5,7,1,4,3,6,2], 2))
-    # print(algorithim.search(list, 6))
+    print(algorithim.splitter("aadrfjirittd"))
