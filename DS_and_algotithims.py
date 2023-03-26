@@ -1,7 +1,10 @@
 # default and needed libraries and modules
 import math
 import json, csv
-import os, sys
+import os
+import sys
+from datetime import datetime
+from pprint import pprint
 
 
 # most have a time complexity of O(n)
@@ -192,5 +195,22 @@ list = [
 
 # algorithim runner
 if __name__ == '__main__':
-    algorithim = Algorithims()
-    print(algorithim.splitter("aadrfjirittd"))
+    word = "kegahfsghdfsgsdfhfhgfheryeryryutherghdf"
+
+
+    def splitter(word: str) -> list:
+        start = datetime.now()
+        if len(word) % 2 == 1:
+            word += "_"
+        values = []
+        for i in range(0, len(word), 2):
+            values.append(word[i:i+2])
+        end = datetime.now()
+        response = {
+            "splitted_values" : values,
+            "execution_duration" : end-start.strptime("%S")
+        }
+
+        return response
+
+    pprint(splitter(word))
