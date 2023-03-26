@@ -23,6 +23,18 @@ def tower_builder(n_floors):
     return tower
 
 
+# this is a move compact version of the above function
+def tower_builder2(n):
+    return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
 
 if __name__ == "__main__":
-    print(tower_builder(3))
+    import time
+
+    start = time.time()
+    print(tower_builder(5))
+    print(f'Tower function 1 ran for {time.time()-start} sec')
+
+
+    start2 = time.time()
+    print(tower_builder2(5))
+    print(f'Tower function 2 ran for {time.time()-start2} sec')
