@@ -166,7 +166,10 @@ class Algorithims:
                 return "Requested number is not present in the table {}".format(nums)
 
 
-    # searching  a 2D matrix
+    '''
+     searching  a 2D matrix
+     [ [vals]]
+    '''
     def search_and_sort_matrix(self, list):
         for i in range(0, len(list)-1):
             for j in range(0, len(list) -1 - i):
@@ -181,11 +184,17 @@ class Algorithims:
         then it should replace the missing second character 
         of the final pair with an underscore ('_').
     """
-    def splitter(self, s):
-        if len(s) % 2 == 1:
-            s += "_"
-        return [s[i:i+2] for i in range(0, len(s), 2)]
-
+    def splitter(self, word: str) -> []:
+        if len(word) % 2 == 1:
+            word += "_"
+        values = []
+        for i in range(0, len(word), 2):
+            values.append(word[i:i+2])
+        resonse = {
+        "number _of_pairs" : len(values),
+        "pairs" : values
+        }
+        return resonse
 
 #  2D matrix to search
 list = [
@@ -193,24 +202,3 @@ list = [
     [7,5,8,6],
 ]
 
-# algorithim runner
-if __name__ == '__main__':
-    word = "kegahfsghdfsgsdfhfhgfheryeryryutherghdf"
-
-
-    def splitter(word: str) -> list:
-        start = datetime.now()
-        if len(word) % 2 == 1:
-            word += "_"
-        values = []
-        for i in range(0, len(word), 2):
-            values.append(word[i:i+2])
-        end = datetime.now()
-        response = {
-            "splitted_values" : values,
-            "execution_duration" : end-start.strptime("%S")
-        }
-
-        return response
-
-    pprint(splitter(word))
