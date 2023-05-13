@@ -7,7 +7,6 @@ import sys
 from datetime import datetime
 from pprint import pprint
 
-
 # most have a time complexity of O(n)
 # learing algorithim
 class Algorithims:
@@ -31,6 +30,47 @@ class Algorithims:
             pt2 = nums[pt2]
 
         return pt1
+
+    # locating dupliactes in a N length array
+    '''
+    Find duplicates in an array of numbers
+
+            - duplicates can be more than 1
+            - if there are more than one duplicates:
+                    return the max val with duplicates:
+                    else if there is a less val with a high frequency of repetitions:
+                        return that one
+
+            case 1:
+            input  : [2, 5, 3, 4, 7, 2]
+            output : 2
+
+            case 2:
+            input  : [2, 4, 3, 5, 4, 2]
+            output : 4
+
+            case 3:
+            input  : [2, 3, 7, 4, 7, 4, 1, 4]
+            output : 4
+    '''
+    def dups(self, nums):
+
+        visited = []
+        dup_val = []
+
+        for num in nums:
+            if num in visited:
+                dup_val.append(num)
+            else:
+                visited.append(num)
+
+        vals = {val: dup_val.count(val)+1 for val in dup_val}
+        results = [key for key, val in vals.items() if max(vals.values()) == val]
+
+        if len(results) > 1:
+            return max(results)
+        else:
+            return results[0]
 
     # -- bubble sort algorithim --
     # O(n**2)
@@ -124,22 +164,6 @@ class Algorithims:
             for data in data_list:
                 self.insert_at_end(data)
 
-    # array list and its operations implementaions getting LCM and GCD
-    # O(n**2)
-
-    class Mathematics:
-
-        def lcm(self, nums):
-            # sort the numbers
-            # loop over the least number
-            # use the least numbers untill it is 1
-            # use the next least number greater than 1
-            # return
-            pass
-
-        def gcd(self, nums):
-            pass
-
     # binaray search and complexity analysis
     # linear serach
     # O(n)
@@ -196,10 +220,75 @@ class Algorithims:
         return resonse
 
 
-#  2D matrix to search
-list = [
-    [3, 1, 2, 4],
-    [7, 5, 8, 6],
-]
+    # matix search
+    def locate(self, x, y, X_axis=[100, 200, 100], y_axis=[50, 100, 100]):
+        locations = {X_axis.index(val[0]): val for val in zip(X_axis, y_axis)}
+        print(locations)
+        locations = [val for val in zip(X_axis, y_axis)]
+        for location in locations:
+            if (
+                (location[0] > x or location[0] == x)
+                and
+                    (location[-1] > y or location[-1] == y)):
+                return f"icon_{locations.index(location)}"
+            else:
+                continue
 
-e
+
+    '''
+        Given an array on length (n)
+        recerate a new array having values form the outisde of the array
+        coming in
+
+        input : [1,2,3,4,5,6,7,8,9]
+        output : [1,9,2,8,3,7,4,6,5]
+
+        INFO : The function give out a generator 
+        that you can loop over to get the values 
+        or use a list comprehention to write the values to a list
+
+    '''
+    def implicitReverse(self, nums): 
+        for i in range(0, len(nums)//2):
+            yield nums[i]
+            yield nums[-1-i]
+
+
+    # frequency for val X in a len(N) 2D-array
+    def main(self, nums) -> int:
+    
+        x=[nums.count(num) for num in nums]
+        
+        if max(x) == min(x):
+            return 0
+        else:
+            freq = {} 
+            for num in nums:
+                if nums.count(num) > 1:
+                    freq[num] = nums.count(num)
+            
+            return max(freq)
+    '''
+            [ QUESTION ]
+    Build a pyramid-shaped tower, as an array/list of strings,
+    given a positive integer number of floors.
+    A tower block is represented with "*" character.
+
+    result = ['  *  ', ' *** ', '*****']
+
+    '''
+    # this is a move compact version of the above function
+    def tower_builder2(self, n):
+        return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
+
+    # LCM
+    def lcm(self, nums)-> int:
+        iters = []
+        if iters:
+            while max(iters) > 1: 
+                for i in range(0, len(nums)):
+                    iters.append(nums[i]//max(iters))
+        else:
+            for i in range(0, len(nums)):
+                iters.append(nums[i]//2)
+        return iters
