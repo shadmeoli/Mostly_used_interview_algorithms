@@ -1,17 +1,22 @@
-# default and needed libraries and modules
-import math
-import json
-import csv
-import os
-import sys
-from datetime import datetime
-from pprint import pprint
-
+from typing import Union
 # most have a time complexity of O(n)
-# learing algorithim
 class Algorithims:
+    """
+        This is the parent entry class housing most of the algorithms
 
-    # floyds tortoise and hare algorithim to find duplicates
+        I have implemented:
+            - Floyd's tortoise and hare
+            - Locating duplicates
+            - Bubble search
+            - Binary search
+            - Singly linked list
+            - searching a 2d Matrix
+            - Implicit revers
+            - Frequency counter
+            - LCM
+    """
+
+    # Floyd's tortoise and hare algorithim to find duplicates
     # O(n)
     def findDuplicate(self, nums):
         tortoise = nums[0]
@@ -31,30 +36,31 @@ class Algorithims:
 
         return pt1
 
-    # locating dupliactes in a N length array
-    '''
-    Find duplicates in an array of numbers
 
-            - duplicates can be more than 1
-            - if there are more than one duplicates:
-                    return the max val with duplicates:
-                    else if there is a less val with a high frequency of repetitions:
-                        return that one
-
-            case 1:
-            input  : [2, 5, 3, 4, 7, 2]
-            output : 2
-
-            case 2:
-            input  : [2, 4, 3, 5, 4, 2]
-            output : 4
-
-            case 3:
-            input  : [2, 3, 7, 4, 7, 4, 1, 4]
-            output : 4
-    '''
     def dups(self, nums):
+        """
+		**Locating dupliactes in a N length array**
 
+		Find duplicates in an array of numbers
+
+		- duplicates can be more than 1
+		- if there are more than one duplicates:
+		return the max val with duplicates:
+		else if there is a less val with a high frequency of repetitions:
+		return that one
+
+		case 1:
+		input  : [2, 5, 3, 4, 7, 2]
+		output : 2
+
+		case 2:
+		input  : [2, 4, 3, 5, 4, 2]
+		output : 4
+
+		case 3:
+		input  : [2, 3, 7, 4, 7, 4, 1, 4]
+		output : 4
+        """
         visited = []
         dup_val = []
 
@@ -83,9 +89,8 @@ class Algorithims:
         return nums
 
     # bubbles([6,4,5,2,3,1])
-
     # O(n)
-    def search(self, matrix: [[1, 2, 3], [4, 5, 6], [7, 8, 9]], target: int) -> bool:
+    def search(self, target: int, matrix=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> bool:
 
         ROWS, COLS = len(matrix), len(matrix[0])
 
@@ -171,43 +176,36 @@ class Algorithims:
     def locate_val(self, nums, requested):
         # pointer positon
         pointer = 0
-
         while pointer < len(nums):
-
             if nums[pointer] == requested:
-
                 return pointer
-
             pointer += 1
-
             if pointer == len(nums):
-
                 return -1
 
             elif requested not in nums:
-
                 return "Requested number is not present in the table {}".format(nums)
 
-    '''
-     searching  a 2D matrix
-     [ [vals]]
-    '''
-
     def search_and_sort_matrix(self, list):
+        """
+		searching  a 2D matrix
+		[ [vals]]
+		"""
         for i in range(0, len(list)-1):
             for j in range(0, len(list) - 1 - i):
                 if list[j] > list[j+1]:
                     list[j], list[j+1] = list[j+1], list[j]
 
-    """
-        Complete the solution so that it splits the string
-        into pairs of two characters. 
-        If the string contains an odd number of characters
-        then it should replace the missing second character 
-        of the final pair with an underscore ('_').
-    """
 
-    def splitter(self, word: str) -> []:
+
+    def splitter(self, word: str):
+        """
+		Complete the solution so that it splits the string
+		into pairs of two characters.
+		If the string contains an odd number of characters
+		then it should replace the missing second character
+		of the final pair with an underscore ('_').
+		"""
         if len(word) % 2 == 1:
             word += "_"
         values = []
@@ -235,7 +233,9 @@ class Algorithims:
                 continue
 
 
-    '''
+
+    def implicitReverse(self, nums):
+        """
         Given an array on length (n)
         recerate a new array having values form the outisde of the array
         coming in
@@ -243,12 +243,10 @@ class Algorithims:
         input : [1,2,3,4,5,6,7,8,9]
         output : [1,9,2,8,3,7,4,6,5]
 
-        INFO : The function give out a generator 
-        that you can loop over to get the values 
+        INFO : The function give out a generator
+        that you can loop over to get the values
         or use a list comprehention to write the values to a list
-
-    '''
-    def implicitReverse(self, nums): 
+        """
         for i in range(0, len(nums)//2):
             yield nums[i]
             yield nums[-1-i]
@@ -268,22 +266,25 @@ class Algorithims:
                     freq[num] = nums.count(num)
             
             return max(freq)
-    '''
-            [ QUESTION ]
-    Build a pyramid-shaped tower, as an array/list of strings,
-    given a positive integer number of floors.
-    A tower block is represented with "*" character.
 
-    result = ['  *  ', ' *** ', '*****']
-
-    '''
     # this is a move compact version of the above function
     def tower_builder2(self, n):
+        """[ QUESTION ]
+		Build a pyramid-shaped tower, as an array/list of strings,
+		given a positive integer number of floors.
+		
+        A tower block is represented with "*" character.
+		
+        result:
+              *  
+             *** 
+            *****
+		"""
         return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
 
     # LCM
-    def lcm(self, nums)-> int:
-        iters = []
+    def lcm(self, nums)-> list[int]:
+        iters: list[int] = []
         if iters:
             while max(iters) > 1: 
                 for i in range(0, len(nums)):
@@ -292,3 +293,7 @@ class Algorithims:
             for i in range(0, len(nums)):
                 iters.append(nums[i]//2)
         return iters
+
+if __name__ == "__main__":
+    alg = Algorithims()
+    alg.tower_builder2(n=10)
