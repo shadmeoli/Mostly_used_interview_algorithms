@@ -1,4 +1,3 @@
-from typing import Union
 # most have a time complexity of O(n)
 class Algorithims:
     """
@@ -296,4 +295,8 @@ class Algorithims:
 
 if __name__ == "__main__":
     alg = Algorithims()
-    alg.tower_builder2(n=10)
+    # floysd_algo = alg.findDuplicate([2,5,3,4,7,2])
+    # duplicates = alg.dups([2,5,3,4,7,2])
+    # bbl = alg.bubble([2,1,3,5,2,7,3,6,9,8])
+    # pair_splitter = alg.splitter("Example")
+    # tower = alg.tower_builder2(n=10)
