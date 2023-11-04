@@ -35,30 +35,29 @@ class Algorithims:
 
         return pt1
 
-
     def dups(self, nums):
         """
-		**Locating dupliactes in a N length array**
+                **Locating dupliactes in a N length array**
 
-		Find duplicates in an array of numbers
+                Find duplicates in an array of numbers
 
-		- duplicates can be more than 1
-		- if there are more than one duplicates:
-		return the max val with duplicates:
-		else if there is a less val with a high frequency of repetitions:
-		return that one
+                - duplicates can be more than 1
+                - if there are more than one duplicates:
+                return the max val with duplicates:
+                else if there is a less val with a high frequency of repetitions:
+                return that one
 
-		case 1:
-		input  : [2, 5, 3, 4, 7, 2]
-		output : 2
+                case 1:
+                input  : [2, 5, 3, 4, 7, 2]
+                output : 2
 
-		case 2:
-		input  : [2, 4, 3, 5, 4, 2]
-		output : 4
+                case 2:
+                input  : [2, 4, 3, 5, 4, 2]
+                output : 4
 
-		case 3:
-		input  : [2, 3, 7, 4, 7, 4, 1, 4]
-		output : 4
+                case 3:
+                input  : [2, 3, 7, 4, 7, 4, 1, 4]
+                output : 4
         """
         visited = []
         dup_val = []
@@ -70,7 +69,8 @@ class Algorithims:
                 visited.append(num)
 
         vals = {val: dup_val.count(val)+1 for val in dup_val}
-        results = [key for key, val in vals.items() if max(vals.values()) == val]
+        results = [key for key, val in vals.items() if max(
+            vals.values()) == val]
 
         if len(results) > 1:
             return max(results)
@@ -187,24 +187,22 @@ class Algorithims:
 
     def search_and_sort_matrix(self, list):
         """
-		searching  a 2D matrix
-		[ [vals]]
-		"""
+                searching  a 2D matrix
+                [ [vals]]
+                """
         for i in range(0, len(list)-1):
             for j in range(0, len(list) - 1 - i):
                 if list[j] > list[j+1]:
                     list[j], list[j+1] = list[j+1], list[j]
 
-
-
     def splitter(self, word: str):
         """
-		Complete the solution so that it splits the string
-		into pairs of two characters.
-		If the string contains an odd number of characters
-		then it should replace the missing second character
-		of the final pair with an underscore ('_').
-		"""
+                Complete the solution so that it splits the string
+                into pairs of two characters.
+                If the string contains an odd number of characters
+                then it should replace the missing second character
+                of the final pair with an underscore ('_').
+                """
         if len(word) % 2 == 1:
             word += "_"
         values = []
@@ -216,8 +214,8 @@ class Algorithims:
         }
         return resonse
 
-
     # matix search
+
     def locate(self, x, y, X_axis=[100, 200, 100], y_axis=[50, 100, 100]):
         locations = {X_axis.index(val[0]): val for val in zip(X_axis, y_axis)}
         print(locations)
@@ -230,8 +228,6 @@ class Algorithims:
                 return f"icon_{locations.index(location)}"
             else:
                 continue
-
-
 
     def implicitReverse(self, nums):
         """
@@ -250,48 +246,49 @@ class Algorithims:
             yield nums[i]
             yield nums[-1-i]
 
-
     # frequency for val X in a len(N) 2D-array
+
     def main(self, nums) -> int:
-    
-        x=[nums.count(num) for num in nums]
-        
+
+        x = [nums.count(num) for num in nums]
+
         if max(x) == min(x):
             return 0
         else:
-            freq = {} 
+            freq = {}
             for num in nums:
                 if nums.count(num) > 1:
                     freq[num] = nums.count(num)
-            
+
             return max(freq)
 
     # this is a move compact version of the above function
     def tower_builder2(self, n):
         """[ QUESTION ]
-		Build a pyramid-shaped tower, as an array/list of strings,
-		given a positive integer number of floors.
-		
+                Build a pyramid-shaped tower, as an array/list of strings,
+                given a positive integer number of floors.
+
         A tower block is represented with "*" character.
-		
+
         result:
               *  
              *** 
             *****
-		"""
+                """
         return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
 
     # LCM
-    def lcm(self, nums)-> list[int]:
+    def lcm(self, nums) -> list[int]:
         iters: list[int] = []
         if iters:
-            while max(iters) > 1: 
+            while max(iters) > 1:
                 for i in range(0, len(nums)):
                     iters.append(nums[i]//max(iters))
         else:
             for i in range(0, len(nums)):
                 iters.append(nums[i]//2)
         return iters
+
 
 if __name__ == "__main__":
     alg = Algorithims()
