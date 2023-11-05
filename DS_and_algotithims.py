@@ -78,8 +78,7 @@ class Algorithims:
             return results[0]
 
     # -- bubble sort algorithim --
-    # O(n**2)
-
+    # O(n^2)
     def bubble(self, nums):
         print(nums)
         for i in range(0, len(nums)-1):
