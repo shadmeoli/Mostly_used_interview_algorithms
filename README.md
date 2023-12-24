@@ -3,9 +3,8 @@
 Welcome to the Algorithms and Programming Problems Repository! This repository is organized to facilitate learning and practice of algorithms and programming problems in various languages including TypeScript, JavaScript, Go, and Python. Below is an in-depth guide to the structure of this repository:
 Most of the questions are from coding interviwes and codewars while some are from leetcode
 
-## Authors
-
-- [@shadmeoli](https://www.github.com/shadmeoli)
+## Author 
+[@shadmeoli](https://www.github.com/shadmeoli)
 
 ## Appendix
 
