@@ -1,18 +1,18 @@
 # most have a time complexity of O(n)
 class Algorithims:
     """
-        This is the parent entry class housing most of the algorithms
+    This is the parent entry class housing most of the algorithms
 
-        I have implemented:
-            - Floyd's tortoise and hare
-            - Locating duplicates
-            - Bubble search
-            - Binary search
-            - Singly linked list
-            - searching a 2d Matrix
-            - Implicit revers
-            - Frequency counter
-            - LCM
+    I have implemented:
+        - Floyd's tortoise and hare
+        - Locating duplicates
+        - Bubble search
+        - Binary search
+        - Singly linked list
+        - searching a 2d Matrix
+        - Implicit revers
+        - Frequency counter
+        - LCM
     """
 
     # Floyd's tortoise and hare algorithim to find duplicates
@@ -37,27 +37,27 @@ class Algorithims:
 
     def dups(self, nums):
         """
-                **Locating dupliactes in a N length array**
+        **Locating dupliactes in a N length array**
 
-                Find duplicates in an array of numbers
+        Find duplicates in an array of numbers
 
-                - duplicates can be more than 1
-                - if there are more than one duplicates:
-                return the max val with duplicates:
-                else if there is a less val with a high frequency of repetitions:
-                return that one
+        - duplicates can be more than 1
+        - if there are more than one duplicates:
+        return the max val with duplicates:
+        else if there is a less val with a high frequency of repetitions:
+        return that one
 
-                case 1:
-                input  : [2, 5, 3, 4, 7, 2]
-                output : 2
+        case 1:
+        input  : [2, 5, 3, 4, 7, 2]
+        output : 2
 
-                case 2:
-                input  : [2, 4, 3, 5, 4, 2]
-                output : 4
+        case 2:
+        input  : [2, 4, 3, 5, 4, 2]
+        output : 4
 
-                case 3:
-                input  : [2, 3, 7, 4, 7, 4, 1, 4]
-                output : 4
+        case 3:
+        input  : [2, 3, 7, 4, 7, 4, 1, 4]
+        output : 4
         """
         visited = []
         dup_val = []
@@ -68,9 +68,8 @@ class Algorithims:
             else:
                 visited.append(num)
 
-        vals = {val: dup_val.count(val)+1 for val in dup_val}
-        results = [key for key, val in vals.items() if max(
-            vals.values()) == val]
+        vals = {val: dup_val.count(val) + 1 for val in dup_val}
+        results = [key for key, val in vals.items() if max(vals.values()) == val]
 
         if len(results) > 1:
             return max(results)
@@ -81,15 +80,14 @@ class Algorithims:
     # O(n^2)
     def bubble(self, nums):
         print(nums)
-        for i in range(0, len(nums)-1):
+        for i in range(0, len(nums) - 1):
             for j in range(0, len(nums) - 1 - i):
-                nums[j], nums[j+1] = nums[j+1], nums[j]
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
         return nums
 
     # bubbles([6,4,5,2,3,1])
     # O(n)
     def search(self, target: int, matrix=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> bool:
-
         ROWS, COLS = len(matrix), len(matrix[0])
 
         top, bott = 0, ROWS - 1
@@ -108,7 +106,7 @@ class Algorithims:
         row = (top + bott) // 2
         l, r = 0, COLS - 1
         while l <= r:
-            m = (l+r) // 2
+            m = (l + r) // 2
             if target > matrix[row][m]:
                 l = m + 1
             elif target < matrix[row][m]:
@@ -127,6 +125,7 @@ class Algorithims:
         def __init__(self, data=None, next=None):
             self.data = data
             self.next = next
+
     # cheaking the linked list
 
     class Linked_list:
@@ -143,10 +142,10 @@ class Algorithims:
                 return
 
             itr = self.head
-            llstr = ''
+            llstr = ""
 
             while itr:
-                llstr += str(itr.data) + '-->'
+                llstr += str(itr.data) + "-->"
                 itr = itr.next
 
             print(llstr)
@@ -186,31 +185,28 @@ class Algorithims:
 
     def search_and_sort_matrix(self, list):
         """
-                searching  a 2D matrix
-                [ [vals]]
-                """
-        for i in range(0, len(list)-1):
+        searching  a 2D matrix
+        [ [vals]]
+        """
+        for i in range(0, len(list) - 1):
             for j in range(0, len(list) - 1 - i):
-                if list[j] > list[j+1]:
-                    list[j], list[j+1] = list[j+1], list[j]
+                if list[j] > list[j + 1]:
+                    list[j], list[j + 1] = list[j + 1], list[j]
 
     def splitter(self, word: str):
         """
-                Complete the solution so that it splits the string
-                into pairs of two characters.
-                If the string contains an odd number of characters
-                then it should replace the missing second character
-                of the final pair with an underscore ('_').
-                """
+        Complete the solution so that it splits the string
+        into pairs of two characters.
+        If the string contains an odd number of characters
+        then it should replace the missing second character
+        of the final pair with an underscore ('_').
+        """
         if len(word) % 2 == 1:
             word += "_"
         values = []
         for i in range(0, len(word), 2):
-            values.append(word[i:i+2])
-        resonse = {
-            "number _of_pairs": len(values),
-            "pairs": values
-        }
+            values.append(word[i : i + 2])
+        resonse = {"number _of_pairs": len(values), "pairs": values}
         return resonse
 
     # matix search
@@ -220,10 +216,9 @@ class Algorithims:
         print(locations)
         locations = [val for val in zip(X_axis, y_axis)]
         for location in locations:
-            if (
-                (location[0] > x or location[0] == x)
-                and
-                    (location[-1] > y or location[-1] == y)):
+            if (location[0] > x or location[0] == x) and (
+                location[-1] > y or location[-1] == y
+            ):
                 return f"icon_{locations.index(location)}"
             else:
                 continue
@@ -241,14 +236,13 @@ class Algorithims:
         that you can loop over to get the values
         or use a list comprehention to write the values to a list
         """
-        for i in range(0, len(nums)//2):
+        for i in range(0, len(nums) // 2):
             yield nums[i]
-            yield nums[-1-i]
+            yield nums[-1 - i]
 
     # frequency for val X in a len(N) 2D-array
 
     def main(self, nums) -> int:
-
         x = [nums.count(num) for num in nums]
 
         if max(x) == min(x):
@@ -270,11 +264,11 @@ class Algorithims:
         A tower block is represented with "*" character.
 
         result:
-              *  
-             *** 
+              *
+             ***
             *****
-                """
-        return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
+        """
+        return [("*" * (i * 2 - 1)).center(n * 2 - 1) for i in range(1, n + 1)]
 
     # LCM
     def lcm(self, nums) -> list[int]:
@@ -282,10 +276,10 @@ class Algorithims:
         if iters:
             while max(iters) > 1:
                 for i in range(0, len(nums)):
-                    iters.append(nums[i]//max(iters))
+                    iters.append(nums[i] // max(iters))
         else:
             for i in range(0, len(nums)):
-                iters.append(nums[i]//2)
+                iters.append(nums[i] // 2)
         return iters
 
 
