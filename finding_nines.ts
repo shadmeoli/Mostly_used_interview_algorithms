@@ -16,4 +16,7 @@ function findingNines(thresh: number, value: number): number {
   return results.length;
 }
 
-console.log("");
+let value = 9;
+let thresh = 100; // the range threshold for numbers to check
+let results = findingNines(thresh, value)
+console.log(`Cunt of ${value}:  ${results}`);
