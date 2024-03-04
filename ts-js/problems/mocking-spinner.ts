@@ -6,9 +6,9 @@
  *
  * The duration of the each cell should be 1 sec for a full cycle.
  * do this in typescript and if possible incorporate classes.
- 
+
  * */
-class Spinner {
+export default class Spinner {
   cells: any
   duration: number
   constructor(public cycles: number) {
@@ -30,7 +30,7 @@ class Spinner {
           let prev = this.cells[i][j];
           this.cells[i][j + 1] = 1;
           this.cells[i][j] = 0;
-        } 
+        }
       }
     }
 
