@@ -4,7 +4,7 @@
   "description": "A group of most common inter voew question that I have come accross and fixed some with help",
   "main": "index.js",
   "scripts": {
-    "app": "ts-node panagram.ts",
+    "app": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
