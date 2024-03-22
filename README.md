@@ -4,8 +4,8 @@ Welcome to the Algorithms and Programming Problems Repository! This repository i
 Most of the questions are from coding interviwes and codewars while some are from leetcode
 
 ## Authors
-- [@shadmeoli](https://www.github.com/shadmeoli)
 
+- [@shadmeoli](https://www.github.com/shadmeoli)
 
 ## Appendix
 
@@ -73,3 +73,10 @@ Most of the questions are based on 1D-arrays & 2D-arrays and some need use of ha
 - This repository is designed for educational purposes, to help users learn and practice algorithms and programming problems in different languages.
 
 - Feel free to contribute by adding new algorithms, improving existing ones, or suggesting better solutions to the programming problems.
+
+### Topics to cover in the comming week.
+
+- Permuations and recussion
+- Tris.
+- Double linked list and its operations
+
