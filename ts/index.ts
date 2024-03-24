@@ -3,3 +3,7 @@
 
 
 console.log("App clean up")
+
+function main() {
+	console.log("Hello wolrd")
+}
