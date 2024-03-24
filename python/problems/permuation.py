@@ -19,5 +19,6 @@ def permute(nums: List[int]) -> List[List[int]]:
 	return results
 
 
+print(permute([4,5,6]))
 
 print(permute([1,2,3]))

@@ -10,7 +10,7 @@ function elemento(arr: number[]): number {
 			if (arr[i] === val) {
 				count++
 			} else (
-				count--
+			count--
 			)
 		}
 	}
