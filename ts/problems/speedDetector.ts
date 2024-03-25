@@ -12,12 +12,12 @@
  *
  * [result]: if 80 -> 2
  */
-function speedDetector(speed) {
+function speedDetector(speed: number): number | string {
   if (speed < 70) {
     return "ok";
   } else if (speed > 70) {
-    let extra_km = speed - 70;
-    let points = 0;
+    let extra_km: number = speed - 70;
+    let points: number = 0;
     while (extra_km > 5 || extra_km === 5) {
       points = points + 1;
       extra_km = extra_km - 5;
@@ -36,7 +36,7 @@ function speedDetector(speed) {
  * Calculate payee, NHIF, NSSF, gross and net
  *
  */
-function getNetSalary(basic, benefits) {
+function getNetSalary(basic: number, benefits: number): float32 {
   const NHIF_RATES = {
     5999: 150,
     7999: 300,
@@ -57,12 +57,13 @@ function getNetSalary(basic, benefits) {
     100000: 1700,
   };
 
-  const THE_RATES = [
+  const THE_RATES: number = [
     5999, 7999, 11999, 14999, 19999, 24999, 29999, 34999, 39999, 44999, 49999,
     59999, 69999, 79999, 89999, 99999, 100000,
   ];
 
-  let NHIF_AMOUNT = 0;
+  let NHIF_AMOUNT: number = 0;
+
 
   for (let i = 0; i < THE_RATES.length; i++) {
     if (basic <= THE_RATES[i]) {
@@ -81,7 +82,7 @@ function getNetSalary(basic, benefits) {
     800001: 35.0,
   };
 
-  let payee_amount = 0;
+  let payee_amount: number = 0;
 
   for (const rate of Object.keys(PAYEE_RATES)) {
     if (basic <= rate) {
@@ -90,10 +91,10 @@ function getNetSalary(basic, benefits) {
     }
   }
 
-  const NSSF_RATES = 0.06; // percentage as decimal
-  const NSSF_AMOUNT = basic * NSSF_RATES; // amount individual should pay
+  const NSSF_RATES: float32 = 0.06; // percentage as decimal
+  const NSSF_AMOUNT: float32 = basic * NSSF_RATES; // amount individual should pay
 
-  let net_salary = basic - NHIF_AMOUNT - NSSF_AMOUNT - payee_amount;
+  let net_salary: float32 = basic - NHIF_AMOUNT - NSSF_AMOUNT - payee_amount;
 
   return net_salary;
 }
