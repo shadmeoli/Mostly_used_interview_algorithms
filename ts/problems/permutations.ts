@@ -31,6 +31,3 @@ function permute(nums: number[]): number[][] {
 
     return results;
 }
-
-
-console.log(permute([1,2,3]))
