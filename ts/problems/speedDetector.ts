@@ -36,7 +36,11 @@ function speedDetector(speed: number): number | string {
  * Calculate payee, NHIF, NSSF, gross and net
  *
  */
-function getNetSalary(basic: number, benefits: number): float32 {
+function getNetSalary(basic: number, benefits: number): number {
+  interface Rates {
+    
+  }
+
   const NHIF_RATES = {
     5999: 150,
     7999: 300,
@@ -57,7 +61,7 @@ function getNetSalary(basic: number, benefits: number): float32 {
     100000: 1700,
   };
 
-  const THE_RATES: number = [
+  const THE_RATES: number[] = [
     5999, 7999, 11999, 14999, 19999, 24999, 29999, 34999, 39999, 44999, 49999,
     59999, 69999, 79999, 89999, 99999, 100000,
   ];
@@ -65,7 +69,7 @@ function getNetSalary(basic: number, benefits: number): float32 {
   let NHIF_AMOUNT: number = 0;
 
 
-  for (let i = 0; i < THE_RATES.length; i++) {
+  for (let i: number = 0; i < THE_RATES.length; i++) {
     if (basic <= THE_RATES[i]) {
       NHIF_AMOUNT = NHIF_RATES[THE_RATES[i]];
       break;
