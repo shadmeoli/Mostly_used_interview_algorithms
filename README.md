@@ -80,3 +80,8 @@ Most of the questions are based on 1D-arrays & 2D-arrays and some need use of ha
 - Tris.
 - Double linked list and its operations
 
+> I am also adding some conepts mostly OOP concepts first with python but late with more OOP centered languages
+> like **Java** and **c++**
+
+#### I will be adding on:
+     - [ ]  
