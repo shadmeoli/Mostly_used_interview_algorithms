@@ -83,5 +83,8 @@ Most of the questions are based on 1D-arrays & 2D-arrays and some need use of ha
 > I am also adding some conepts mostly OOP concepts first with python but late with more OOP centered languages
 > like **Java** and **c++**
 
-#### I will be adding on:
-     - [ ]  
+
+**From now on most complex OOP concepts I will be implementing them either with c++ of Java**
+
+#### Why Java or C++.
+To my preference I believe these are some of the languages tha use deep OOP concepts which are building blocks of how some things work mostly algorithms and data sctructures
