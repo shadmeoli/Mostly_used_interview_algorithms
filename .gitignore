@@ -1,4 +1,6 @@
 /.idea
 /.vscode
 /node_modules
-ts/node_modules
+/ts/node_modules
+/__pycache__
+/__bin__
