@@ -1,3 +1,8 @@
+
+import heapq
+from typing import List, Dict
+
+
 """
 Path finding algorith for values in
 a weighted graph between fixed nodes
@@ -18,9 +23,6 @@ Info to Keep Track:
     - calculate the distance to its neightbours
 
 """
-
-import heapq
-from typing import List, Dict
 
 
 def dijkstra(n: int, edges: List[List[int]], src: int) -> Dict[int, int]:
