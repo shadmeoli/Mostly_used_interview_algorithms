@@ -17,7 +17,6 @@ Info to Keep Track:
     - Choose the the distance with the least value then make it the current node
     - calculate the distance to its neightbours
 
-
  */
 function dijkstra(
   n: number,
