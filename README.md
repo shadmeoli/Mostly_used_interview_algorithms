@@ -93,4 +93,39 @@ To my preference I believe these are some of the languages tha use deep OOP conc
 #### Concepts to cover:
     - [ ] Class Methods and instance methods.
     - [ ] Reference counting
-    - [ ]  
+
+
+
+## Codewards Problems
+> I am not by any way suggesting my ways are better. These were just my approach to the problem.
+
+#### Shortest Knight Path
+File: [chessMovesCalc.py](python/problems/chessMovesCalc.py)\
+Approach: BFS
+
+#### Solution Break down.
+1.  **Board Representation**: The first step is to represent the chessboard. We can represent the board as an 8x8 grid, where each cell represents a square on the board. We'll use algebraic notation to label each cell.
+    
+2.  **Valid Moves**: We need to determine the valid moves a knight can make from a given position. According to the rules of chess, a knight can move in an "L" shape: two squares in one direction (either horizontally or vertically) and then one square perpendicular to that direction. We'll compute all possible valid moves for a given position.
+    
+3.  **Breadth-First Search (BFS)**: We'll use BFS to search for the shortest path from the starting position to the target position. BFS is well-suited for finding the shortest path in unweighted graphs, which is applicable here since each move has the same weight (1).
+    
+4.  **Queue for BFS**: We'll use a queue data structure to implement BFS. Starting with the initial position, we'll explore all possible moves from each position until we reach the target position.
+    
+5.  **Visited Set**: To avoid revisiting the same position and getting stuck in an infinite loop, we'll keep track of visited positions using a set data structure.
+    
+6.  **Algorithm Execution**: We'll start BFS from the initial position. At each step, we'll dequeue a position from the queue, check if it's the target position, and if not, enqueue all its valid neighboring positions that haven't been visited yet. We'll repeat this process until we find the target position or exhaust all possible moves.
+    
+7.  **Distance Calculation**: As we explore positions in BFS, we'll keep track of the distance traveled from the initial position to each visited position. Once we find the target position, we'll return the distance traveled as the least number of moves required.
+    
+
+### Code Execution:
+
+The implementation consists of defining the `knight` function, which encapsulates the entire solution. Within this function:
+
+*   The chessboard is represented as a grid.
+*   BFS is performed using a queue to find the shortest path.
+*   Valid moves are computed dynamically for each position.
+*   Visited positions are tracked to avoid revisiting.
+
+The function returns the least number of moves required for the knight to reach the target position.
