@@ -91,8 +91,8 @@ To my preference I believe these are some of the languages tha use deep OOP conc
 
 
 #### Concepts to cover:
-    - [ ] Class Methods and instance methods.
-    - [ ] Reference counting
+- [X] Class Methods and instance methods.
+- [x] Reference counting
 
 
 
@@ -100,7 +100,8 @@ To my preference I believe these are some of the languages tha use deep OOP conc
 > I am not by any way suggesting my ways are better. These were just my approach to the problem.
 
 #### Shortest Knight Path
-File: [chessMovesCalc.py](python/problems/chessMovesCalc.py)\
+Pyhton File: [chessMovesCalc.py](python/problems/chessMovesCalc.py)\
+Java File: [KnightMoves.java](__java__/KnightMoves.java)\
 Approach: BFS
 
 #### Solution Break down.
