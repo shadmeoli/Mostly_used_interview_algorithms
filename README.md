@@ -88,3 +88,9 @@ Most of the questions are based on 1D-arrays & 2D-arrays and some need use of ha
 
 #### Why Java or C++.
 To my preference I believe these are some of the languages tha use deep OOP concepts which are building blocks of how some things work mostly algorithms and data sctructures
+
+
+#### Concepts to cover:
+    - [ ] Class Methods and instance methods.
+    - [ ] Reference counting
+    - [ ]  
