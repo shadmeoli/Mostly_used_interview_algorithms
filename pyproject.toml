@@ -1,0 +1,19 @@
+[project]
+name = "mostly-used-algos"
+version = "0.1.0"
+description = "A collection of commonly used algorithm problems and solutions with built-in CLI test tools for quick validation and learning."
+authors = [
+    {name = "shadmeoli",email = "shadcodes@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = "^3.10"
+dependencies = [
+    "click (>=8.2.1,<9.0.0)",
+    "rich (>=14.0.0,<15.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
