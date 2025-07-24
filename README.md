@@ -33,36 +33,76 @@ Most of the questions are based on 1D-arrays & 2D-arrays and some need use of ha
 ## Folder Structure:
 
 ```
-.
-├── go-lang
-│   ├── algos               # Contains Go language implementations of algorithms
-│   │   └── algos.go        # File with Go implementations of algorithms
-│   ├── go.mod              # Go module file for managing dependencies
-│   ├── main.go             # Main Go program file for executing code
-│   └── problems            # Directory for Go language programming problems
-├── python
-│   ├── algos               # Contains Python implementations of algorithms
-│   │   └── DS_and_algotithims.py  # File with Python implementations of algorithms
-│   └── problems            # Directory for Python programming problems
-│       ├── gameoflife.py   # Python code for Conway's Game of Life problem
-│       └── panag.py        # Python code for checking if a string is a panagram
-├── ts-js
-│   ├── algos               # Contains TypeScript/Javascript implementations of algorithms
-│   │   ├── binary_search.ts        # TypeScript/Javascript code for binary search algorithm
-│   │   ├── bubbleSort.ts           # TypeScript/Javascript code for bubble sort algorithm
-│   │   ├── dsa_with_ts.ts          # TypeScript/Javascript code for data structures and algorithms
-│   │   ├── finding_nines.ts        # TypeScript/Javascript code for finding nines problem
-│   │   └── panagram.ts             # TypeScript/Javascript code for checking if a string is a panagram
-│   ├── index.ts            # Main TypeScript file for executing code
-│   ├── node_modules        # Node.js modules folder for managing dependencies
-│   ├── package.json        # Node.js package file for managing project metadata and dependencies
-│   ├── pnpm-lock.yaml      # pnpm package lock file for dependency management
-│   ├── problems            # Directory for TypeScript/Javascript programming problems
-│   │   ├── mocking-spinner.ts      # TypeScript/Javascript code for mocking spinner problem
-│   │   └── noisefunction.ts        # TypeScript/Javascript code for noise function problem
-│   └── tsconfig.json       # TypeScript configuration file for configuring TypeScript compiler options
-├── README.md               # Repository Readme file containing documentation and information about the repository
-└── .gitignore              # Git ignore file for specifying intentionally untracked files to ignore
+
+cpp
+└── main.cpp
+go
+├── algos
+│   └── bubbleSort.go
+├── go.mod
+├── main.go
+└── problems
+    └── perms.go
+java
+├── KnightMoves.java
+└── main.java
+poetry.lock
+pyproject.toml
+pyru.sh
+python
+├── algos
+│   ├── dijkstra.py
+│   └── DS_and_algotithims.py
+├── Concepts
+│   └── OOP_Concepts.py
+├── problems
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── find_peaks.cpython-313.pyc
+│   │   ├── reverse_words.cpython-313.pyc
+│   │   └── traversing_arrays.cpython-313.pyc
+│   ├── chessMovesCalc.py
+│   ├── duplicates.py
+│   ├── dynamic_programming_problems.py
+│   ├── find_peaks.py
+│   ├── gameoflife.py
+│   ├── panag.py
+│   ├── permuation.py
+│   ├── reverse_words.py
+│   ├── stars.py
+│   └── traversing_arrays.py
+└── tester
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-313.pyc
+    │   └── testLogger.cpython-313.pyc
+    └── testLogger.py
+README.md
+ts
+├── algos
+│   ├── binary_search.ts
+│   ├── bubbleSort.ts
+│   ├── dijkstra.ts
+│   ├── dsa_with_ts.ts
+│   ├── finding_nines.ts
+│   ├── numsum.ts
+│   └── panagram.ts
+├── bun.lockb
+├── index.ts
+├── package.json
+├── pnpm-lock.yaml
+├── problems
+│   ├── duplicates.ts
+│   ├── majority_element.ts
+│   ├── mocking-spinner.ts
+│   ├── noisefunction.ts
+│   ├── permutations.ts
+│   ├── speedDetector.ts
+│   └── stars.ts
+└── tsconfig.json
+
+
 ```
 
 ## Folder Descriptions:
