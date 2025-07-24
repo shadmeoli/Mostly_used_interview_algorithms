@@ -9,6 +9,7 @@ from python.tester.testLogger import test_runner
 
 # level 1
 def find_first_big_number(arr):
+    # O(n)
     for idx, val in enumerate(arr):
         if val >= 10:
             return idx
@@ -24,8 +25,16 @@ def test_find_first_big_number(arr):
 
 # level 2
 def count_increasing_pairs(arr):
-    # Implement this
-    pass
+    adj = 0
+    # time O(n)
+    for idx, val in enumerate(arr):
+        # space O(1)
+        if idx == 0:
+            continue
+        # space O(1)
+        if val > arr[idx - 1]:
+            adj += 1
+    return adj
 
 
 @test_runner(
@@ -36,13 +45,13 @@ def test_count_increasing_pairs(arr):
 
 
 if __name__ == "__main__":
-    test_find_first_big_number(
-        [
-            [2, 5, 11, 3],  # 11 is at index 2
-            [1, 4, 6, 9],  # no number >= 10, return -1
-            [10, 20, 30],  # 10 is at index 0
-        ]
-    )
+    # test_find_first_big_number(
+    #     [
+    #         [2, 5, 11, 3],  # 11 is at index 2
+    #         [1, 4, 6, 9],  # no number >= 10, return -1
+    #         [10, 20, 30],  # 10 is at index 0
+    #     ]
+    # )
 
     test_count_increasing_pairs(
         [
