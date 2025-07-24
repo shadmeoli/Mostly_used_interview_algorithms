@@ -1,3 +1,4 @@
 # run.sh
 #!/bin/bash
-python3 -m python.problems."$1"
+poetry run python -m python.problems."$1"
+
