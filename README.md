@@ -6,9 +6,27 @@ Most of the questions are from coding interviwes and codewars while some are fro
 ## Author 
 [@shadmeoli](https://www.github.com/shadmeoli)
 
-## Appendix
 
-Any additional information goes here
+---
+
+#### Python Testing Update
+
+> 📣 **New Test Runner Available!**  
+> We've added a unified and elegant way to test Python solutions with colored CLI output, spinners, and summaries using a custom decorator.
+
+Activate your Poetry environment:
+
+```sh
+poetry env activate $(poetry env info --path)
+````
+
+[Jump to testing usage guide](#python-test-runner-usage)
+
+---
+
+
+##Appendix
+
 
 Most of the questions are based on 1D-arrays & 2D-arrays and some need use of hash maps | dictionaries | sets | heap
 
@@ -129,3 +147,70 @@ The implementation consists of defining the `knight` function, which encapsulate
 *   Visited positions are tracked to avoid revisiting.
 
 The function returns the least number of moves required for the knight to reach the target position.
+
+---
+
+### Python Test Runner Usage
+
+Create your testable function normally:
+
+```python
+# my_code.py
+def find_first_big_number(arr):
+    for idx, val in enumerate(arr):
+        if val >= 10:
+            return idx
+    return -1
+````
+
+Then, in your test file:
+
+```python
+# test_find_big.py
+from tester.testLogger import test_runner
+from my_code import find_first_big_number
+
+@test_runner
+def test_case_1():
+    assert find_first_big_number([2, 5, 11, 3]) == 2
+
+@test_runner
+def test_case_2():
+    assert find_first_big_number([1, 4, 6, 9]) == -1
+
+@test_runner
+def test_case_3():
+    assert find_first_big_number([10, 20, 30]) == 0
+```
+
+Run the file:
+
+```bash
+python test_find_big.py
+```
+
+> 💡 **Note:**  
+For python questions and also the custom test runner decorator I am using [Poetry](https://python-poetry.org/) to manage dependencies and environments.  
+If you're contributing or testing locally, make sure to install Poetry and use the configured environment:
+
+```bash
+# Install project dependencies
+poetry install
+
+# Activate the virtual environment
+poetry env activate $(poetry env info --path)
+
+# Run a file
+poetry run python python/problems/your_file.py
+````
+
+Alternatively, you can use the helper script to quickly run problem files:
+
+#### Example usage
+```bash
+./run.sh traversing_arrays
+```
+
+This will run `python/problems/traversing_arrays.py` using the Poetry environment.
+
+
