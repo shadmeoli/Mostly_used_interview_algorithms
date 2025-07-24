@@ -45,12 +45,20 @@ Input: "Python is fun"
 Output: "nuf si nohtyP"
 """
 
+# solution 1
+# def reverse_string(s):
+#     words = s.strip().split(" ")
+#     for idx, word in enumerate(words):
+#         words[idx] = "".join(reversed(word))
+#     return " ".join(reversed(words))
 
+
+# solution 2 -> walking back
 def reverse_string(s):
-    words = s.strip().split(" ")
-    for idx, word in enumerate(words):
-        words[idx] = "".join(reversed(word))
-    return " ".join(reversed(words))
+    result = ""
+    for i in range(len(s) - 1, -1, -1):
+        result += s[i]
+    return result
 
 
 @test_runner(
