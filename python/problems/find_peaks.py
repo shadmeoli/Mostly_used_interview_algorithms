@@ -20,16 +20,18 @@ from python.tester.testLogger import test_runner
 
 def find_peaks(arr):
     peaks = []
-    for idx in range(len(arr) - 1):
-        if idx + 1 == len(arr) or sorted(arr) == arr:
-            break
-        if arr[idx + 1] > arr[idx] and arr[idx + 1] > arr[idx + 2]:
-            peaks.append(idx + 1)
+    # O(n) -> time
+    for idx in range(1, len(arr) - 1):
+        # O(1) -> space
+        if arr[idx] > arr[idx - 1] and arr[idx] > arr[idx + 1]:
+            peaks.append(idx)
     return peaks
 
 
 @test_runner(
-    expected=[[1, 3, 5], [], [2]], assert_is_array=True, message="Find peak indices"
+    expected=[[1, 3, 5], [], [2], [1]],  # All expected results now match input count
+    assert_is_array=True,
+    message="Find peak indices",
 )
 def test_find_peaks(arr):
     return find_peaks(arr)
@@ -41,5 +43,6 @@ if __name__ == "__main__":
             [1, 3, 2, 4, 1, 5, 2],  # peaks at 3, 4, 5 → indices: [1, 3, 5]
             [1, 2, 3, 4, 5],  # strictly increasing → no peaks
             [5, 4, 9, 2, 1],  # peak at 9 → index 2
+            [1, 3, 2, 4, 5],  # peak at 3 → index 1
         ]
     )
