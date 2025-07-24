@@ -34,7 +34,7 @@ def test_runner(expected, assert_is_array=False, message=None):
                 for i, test_input in enumerate(test_cases):
                     try:
                         output = (
-                            func(*test_input)
+                            func(test_input)
                             if assert_is_array
                             else func(*args, **kwargs)
                         )
