@@ -4,3 +4,4 @@
 /ts/node_modules
 /__pycache__
 /__bin__
+poetry.lock
