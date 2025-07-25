@@ -25,7 +25,7 @@ def most_frequent_char(s):
 
 
 @test_runner(
-    expected=["a", "l", "e"],
+    expected=["b", "l", "e"],
     assert_is_array=True,
     message="Most frequent character",
 )
@@ -36,7 +36,7 @@ def test_most_frequent_char(arr):
 if __name__ == "__main__":
     test_most_frequent_char(
         [
-            "abcaabcc",  # 'a' appears 3 times
+            "abcabbbabcc",  # 'a' appears 3 times
             "levelupskills",  # 'l' appears 3 times
             "edgecase",  # 'e' appears 2 times first
         ]
