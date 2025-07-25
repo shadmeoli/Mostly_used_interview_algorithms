@@ -2,6 +2,7 @@
 /.vscode
 /node_modules
 /ts/node_modules
-/__pycache__
+__pycache__
+*.pyc
 /__bin__
 poetry.lock
