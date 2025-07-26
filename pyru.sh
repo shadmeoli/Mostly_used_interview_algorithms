@@ -1,4 +1,4 @@
 # run.sh
 #!/bin/bash
-# poetry run python -m python.problems."$1"
-poetry run python -m python.Concepts."$1"
+poetry run python -m python.problems."$1"
+# poetry run python -m python.Concepts."$1"
