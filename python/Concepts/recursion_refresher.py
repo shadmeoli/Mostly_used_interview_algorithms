@@ -23,5 +23,19 @@ def test_recursive_bubble_sort(arr):
     return recursiveBubbleSort(arr)
 
 
+def reverse_string(s):
+    if len(s) <= 1:
+        return s
+    return reverse_string(s[1:]) + s[0]
+
+
+@test_runner(
+    expected="edoc", assert_is_array=False, message="Bubble sort with recursion"
+)
+def test_recursive_reverse_string(arr):
+    return reverse_string(arr)
+
+
 if __name__ == "__main__":
-    test_recursive_bubble_sort([[2, 8, 6, 4]])
+    # test_recursive_bubble_sort([[2, 8, 6, 4]])
+    test_recursive_reverse_string("code")
