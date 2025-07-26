@@ -1,8 +1,19 @@
 from python.tester.testLogger import test_runner
 
 
-def recursiveBubbleSort(arr):
-    pass
+def recursiveBubbleSort(arr, n=None, ind=0):
+    if n is None:
+        n = len(arr)
+
+    if n == 1:
+        return arr
+
+    if ind == n - 1:
+        return recursiveBubbleSort(arr, n - 1, 0)
+
+    if arr[ind] > arr[ind + 1]:
+        arr[ind], arr[ind + 1] = arr[ind + 1], arr[ind]
+    return recursiveBubbleSort(arr, n, ind + 1)
 
 
 @test_runner(
