@@ -22,20 +22,6 @@ Note that the answer must be a substring, "pwke" is a subsequence and not a vali
 from collections import Counter
 from python.tester.testLogger import test_runner
 
-
-# # INFO: this is just a hack and would work only if they are sorted alphabaticaly
-# def length_of_longest_substring(s):
-#     subs = []
-#     primary = list(Counter(s).keys())
-#     print(primary)
-#     if len(primary) == 1:
-#         return len(primary)
-
-#     for item in primary:
-#         subs = [*subs, item]
-#     return len(subs)
-
-
 def length_of_longest_substring(s):
     _set = set()
     step = 0
