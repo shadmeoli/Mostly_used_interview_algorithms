@@ -1,22 +1,25 @@
 """
 I am trying to learn the concepts of:
-    [ ] dunder methods
-    [ ] cls methods
-    [ ] self methods
-    [ ] walrus methods
-    [ ] how to avoid reference counting and also circular imports
-    [ ] Decorator pattern with classes
-    [ ] Instance and class methods
+    [x] dunder methods
+    [x] cls methods
+    [x] self methods
+    [x] walrus operators
+    [x] how to avoid reference counting and also circular imports
+    [x] Decorator pattern with classes
+    [x] Instance and class methods
 
-Most of these are OOP concepts which I would be also using a more 
+Most of these are OOP concepts which I would be also using a more
 OOP centered language like C++, C# of Java
 """
-from typing import Callable
-class Test1:
-    ...
 
-class Test2:
-    ...
+from typing import Callable
+
+
+class Test1: ...
+
+
+class Test2: ...
+
 
 class Deorator:
 
@@ -28,15 +31,17 @@ class Deorator:
     def __call__(self):
 
         result, __memoized = self.__memoize(self.__args, self.__kwargs)
+
         def wrapper_function():
             self.func(result)
+
         return wrapper_function()
 
     def __memoize(self, *args, **kwargs):
         match (self.__args, self.__kwargs):
-            case(self.__args):
+            case self.__args:
                 return self.__args, False
-            case(self.__kwargs):
+            case self.__kwargs:
                 return self.__kwargs, False
 
         return None, True

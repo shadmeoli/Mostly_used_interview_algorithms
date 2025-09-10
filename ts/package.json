@@ -1,0 +1,25 @@
+{
+  "name": "dsa-quiz",
+  "version": "1.0.0",
+  "description": "A group of most common inter voew question that I have come accross and fixed some with help",
+  "main": "index.js",
+  "scripts": {
+    "app": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadmeoli/Mostly_used_interview_algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadmeoli/Mostly_used_interview_algorithms/issues"
+  },
+  "homepage": "https://github.com/shadmeoli/Mostly_used_interview_algorithms#readme",
+  "dependencies": {
+    "perlin-noise-2d": "^1.0.0",
+    "ts-node": "^10.9.2"
+  }
+}

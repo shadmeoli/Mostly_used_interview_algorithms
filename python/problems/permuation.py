@@ -7,19 +7,19 @@ def permute(nums: List[int]) -> List[List[int]]:
     # base classmethod
     if len(nums) == 1:
         return [nums.copy()]  # make it faster with a copying macro [nums[:]]
-        return [nums[:]]  # this marcro makes a copy faster
 
-    for i in range(len(nums)):
-        n = nums.pop(0)
-        perms = permute(nums)
-        for perm in perms:
-            perm.append(n)
-        results.extend(perms)
-        nums.append(n)
+    for num in nums:
+        variant = [num]
+        for val in nums:
+            if val == num:
+                continue
+            variant.append(val)
+        if variant == nums:
+            continue
+        results.append(variant)
 
     return results
 
 
 print(permute([4, 5, 6]))
-
 print(permute([1, 2, 3]))
