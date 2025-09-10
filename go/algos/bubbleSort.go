@@ -14,6 +14,20 @@ func bubbleSort(arr []int) {
 	}
 }
 
+func recursiveBubbleSort(arr []int) {
+	if len(arr) <= 1 {
+		return
+	}
+	recursiveBubbleSort(arr[1:])
+	for i := 0; i < len(arr)-1; i++ {
+		if arr[i] > arr[i+1] {
+			temp := arr[i+1]
+			arr[i+1] = arr[i]
+			arr[i] = temp
+		}
+	}
+}
+
 func main() {
 	arr := []int{2, 7, 1, 3, 5, 4, 6, 9, 8}
 	bubbleSort(arr)
