@@ -19,8 +19,6 @@ Explanation: The answer is "wke", with the length of 3.
 Note that the answer must be a substring, "pwke" is a subsequence and not a valid answer.
 """
 
-from collections import Counter
-
 from python.tester.testLogger import test_runner
 
 
@@ -31,14 +29,15 @@ def length_of_longest_substring(s):
 
     for right in range(len(s)):
         while s[right] in _set:
-           _set.remove(s[left])
-           left += 1
+            _set.remove(s[left])
+            left += 1
 
         window = (right - left) + 1
         step = max(step, window)
         _set.add(s[right])
 
     return step
+
 
 @test_runner(
     expected=[3, 1, 3, 0, 2, 6],
