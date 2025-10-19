@@ -12,7 +12,7 @@ Most of these are OOP concepts which I would be also using a more
 OOP centered language like C++, C# of Java
 """
 
-from typing import Callable
+from typing import Callable, Any
 
 
 class Test1: ...
@@ -22,14 +22,12 @@ class Test2: ...
 
 
 class Deorator:
-
-    def __init__(self, func: Callable, *args, **kwargs):
+    def __init__(self, func: Callable[..., Any], *args, **kwargs):
         self.func = func
         self.__args = args
         self.__kwargs = kwargs
 
     def __call__(self):
-
         result, __memoized = self.__memoize(self.__args, self.__kwargs)
 
         def wrapper_function():

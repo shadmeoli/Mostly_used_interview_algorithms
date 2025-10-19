@@ -4,7 +4,7 @@ array and returns the duplicatre value.
 """
 
 
-def findDuplicate(arr: [int]):
+def findDuplicate(arr: list[int]):
     # dups = []
     # for idx, i in enumerate(arr):
     #     if i in arr[:idx]:
